@@ -8,8 +8,8 @@ Background:
 
 Scenario: User is Tai Nguyen
     When I go to "console.liferay.coffee"
-    Then I enter in email "Email"
-    Then I enter in password "Password"
-    Then I click "Log in"
-    Then I click "user icon"
+    And I enter in email "Email"
+    And I enter in password "Password"
+    And I click "Log in"
+    And I click "user icon"
     Then I should see the user name "Tai Nguyen"
