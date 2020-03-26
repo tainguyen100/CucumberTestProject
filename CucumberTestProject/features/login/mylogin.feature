@@ -11,5 +11,5 @@ Scenario: User is Tai Nguyen
     Then I enter in email "Email"
     Then I enter in password "Password"
     Then I click "Log in"
-    Then I click user icon
+    Then I click "user icon"
     Then I should see the user name "Tai Nguyen"
