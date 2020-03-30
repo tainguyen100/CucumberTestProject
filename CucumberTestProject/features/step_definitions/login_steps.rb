@@ -9,8 +9,8 @@ Given ("I go to website {string}") do |url|
   visit(url)
 end
 
-When ("I enter in email {string}") do |textInput|
-  LoginPage.email(textInput)
+When ("I enter in email {string}") do |text_input|
+  LoginPage.email(text_input)
 end
 
 And ("I enter in password") do
@@ -23,10 +23,9 @@ And ("I click {string}") do |log|
 end
 
 And ("I click user avatar") do
-  LoginPage.avatar
+  LoginPage.click_avatar
 end
 
-Then ("I should see the user is {string}") do |userName|
-  LoginPage.is_user?(userName)
-  # expect(page).to have_text(userName)
+Then ("I should see the user is {string}") do |user_name|
+  expect(LoginPage).to have_text(user_name)
 end
