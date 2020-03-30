@@ -1,3 +1,4 @@
+# require_relative "../support/login_page"
 #
 # Setup steps
 #
@@ -9,7 +10,7 @@ Given ("I go to website {string}") do |url|
 end
 
 When ("I enter in email {string}") do |textInput|
-  page.fill_in("Enter your email", with: textInput)
+  LoginPage.email(textInput)
 end
 
 And ("I enter in password") do
@@ -18,13 +19,14 @@ end
 
 And ("I click {string}") do |log|
   page.click_button("submit")
-end
-
-And ("I click user avatar") do
-  page.find(:css, "span[class='avatar avatar-round avatar-small']").click
   sleep 5
 end
 
-Then ("I should see the user is {string}") do |user|
-  expect(page).to have_text(user)
+And ("I click user avatar") do
+  LoginPage.avatar
+end
+
+Then ("I should see the user is {string}") do |userName|
+  LoginPage.is_user?(userName)
+  # expect(page).to have_text(userName)
 end
